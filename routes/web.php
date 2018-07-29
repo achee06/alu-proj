@@ -29,6 +29,12 @@ Route::get('pages/registration', function () {
     return view('Registration');
 })->middleware('buildnavbar');
 
+Route::get('pages/login', function () {
+    return view('login');
+})->middleware('buildnavbar')->name('login');
+
+Route::post('pages/login', 'LoginController@postLogin')->middleware('buildnavbar')->name('post_login');
+
 Route::resource('pages/registration/success', 'RegisterController');
 /*Route::post('Registration', 'RegisterController@store');*/
 
