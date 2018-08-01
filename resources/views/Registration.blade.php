@@ -26,11 +26,11 @@
                       </ul>
                   </div>
               @endif
-                        @if(@session('response'))
-                          <div class="col-md-8 alert alert-sucess">
-                            {{@session('success')}}
-                          </div>
-                        @endif
+              @if(@session('response'))
+                <div class="col-md-8 alert alert-sucess">
+                  {{@session('success')}}
+                </div>
+              @endif
 
         
           <div class="panel panel-default form_background">
@@ -41,23 +41,13 @@
               <form method="POST" action="{{url ('pages/registration/success') }}">
                  {{ csrf_field() }}
 
-
-                <div class="form-group">
-                  <div class="cols-sm-10">
-                      <div class="input-group">
-                          <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                          <input type="text" class="form-control input-sm" id="cms_userid" name="user" placeholder="user">
-                      </div>
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4">
                       <div class="form-group">
                         <div class="cols-sm-10">
                           <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_firstname" id="firstname" class="form-control input-sm" placeholder="First Name">
+                        <input type="text" name="name_firstname" id="firstname" class="form-control input-sm" placeholder="First Name" value="{{ old('name_firstname') }}">
                           </div>
                         </div>
                       </div>
@@ -68,7 +58,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                              <input type="text" name="name_middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name">
+                              <input type="text" name="name_middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name" value="{{ old('name_middlename') }}">
                             </div>
                         </div>
                       </div>
@@ -79,7 +69,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_lastname" id="lastname" class="form-control input-sm" placeholder="Last Name">
+                        <input type="text" name="name_lastname" id="lastname" class="form-control input-sm" placeholder="Last Name" value="{{ old('name_lastname') }}">
                             </div>
                         </div>
                       </div>
@@ -90,7 +80,7 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                          <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                          <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" value="{{ old('email') }}">
                       </div>
                   </div>
                 </div>
@@ -124,7 +114,7 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
-                          <input type="text" class="form-control input-sm" id="address" name="name_address" placeholder="Address">
+                          <input type="text" class="form-control input-sm" id="address" name="name_address" placeholder="Address" value="{{ old('name_address') }}">
                       </div>
                   </div>
                 </div>
@@ -336,7 +326,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mobile-phone" aria-hidden="true"></i></span>
-                              <input type="text" name="name_mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number">
+                              <input type="text" name="name_mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number" value="{{ old('name_mobile') }}">
                           </div>
                         </div>
                       </div>
@@ -347,7 +337,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <input type="text" name="name_course" id="course" class="form-control input-sm" placeholder="Course">
+                        <input type="text" name="name_course" id="course" class="form-control input-sm" placeholder="Course" value="{{ old('name_course') }}">
                             </div>
                         </div>   
                       </div>
@@ -358,7 +348,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                              <input type="text" name="name_batch" id="batch" class="form-control input-sm" placeholder="Batch">
+                              <input type="text" name="name_batch" id="batch" class="form-control input-sm" placeholder="Batch" value="{{ old('name_batch') }}">
                             </div>
                         </div>
                       </div>
@@ -370,7 +360,7 @@
                    <div class="cols-sm-10">
                         <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-group" aria-hidden="true"></i></span>
-                              <input type="text" class="form-control input-sm" id="membership" name="name_membership" placeholder="Membership">
+                              <input type="text" class="form-control input-sm" id="membership" name="name_membership" placeholder="Membership" value="{{ old('name_membership') }}">
                         </div>
                       </div>
                     </div>
