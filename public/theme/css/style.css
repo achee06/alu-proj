@@ -2205,6 +2205,10 @@ html.is-builder .article .lead:not([data-app-remove-it]) + div .btn {
 border-radius: 4px;
 padding: 1rem;
 background-color: rgb(255,215,0,0.5);
+margin: 2rem;
+margin-left:3rem;
+margin-right:3rem;
+box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
 
 .title-header{

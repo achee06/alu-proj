@@ -8,14 +8,8 @@
       <div class="row">
 
         <!-- Post Content Column -->
-        <div class="col-lg-8">
-          <div class="anouncement-title">
-            <div class="hr-text">
-              <span style="font-size: 40px; background-color: #FFF; padding: 0 10px; font-variant: small-caps;">
-            
-                </span>
-            </div>
-          </div>
+        
+        
 
              @if ($errors->any())
                   <div class="alert alert-danger">
@@ -377,7 +371,7 @@
         
           
               
-        </div>
+        
 
         @if(Request::is('/'))
 
@@ -439,12 +433,12 @@
               </p>
             </div>
           </div>
-        @else
+       
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <!-- <div class="col-md-4"> -->
 
           <!-- Search Widget -->
-          <div class="card my-4">
+         <!--  <div class="card my-4">
             <h5 class="card-header">Search</h5>
             <div class="card-body">
               <form method="get" action="{{ url('search') }}">
@@ -456,10 +450,10 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div> -->
 
           <!-- Categories Widget -->
-          <div class="card my-4">
+          <!-- <div class="card my-4">
             <h5 class="card-header">Categories</h5>
             <div class="card-body">
               <div class="row">
@@ -478,7 +472,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Side Widget
            <div class="card my-4">
             <h5 class="card-header">Side Widget</h5>
