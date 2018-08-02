@@ -9,6 +9,6 @@ class CmsUsers extends Model
     //
     public function user_details()
     {
-    	return $this->hasOne(CmsUserDetails::class, 'cms_user_id');
+    	return $this->hasOne(UserDetails::class, 'cms_user_id');
     }
 }

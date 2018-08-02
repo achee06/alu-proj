@@ -20,9 +20,11 @@
                       </ul>
                   </div>
               @endif
-              @if(@session('response'))
-                <div class="col-md-8 alert alert-sucess">
-                  {{@session('success')}}
+              @if(session()->has('success_message'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  </button>
+                  <strong>{{ session('success_message') }}</strong>               
                 </div>
               @endif
 
@@ -41,7 +43,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_firstname" id="firstname" class="form-control input-sm" placeholder="First Name" value="{{ old('name_firstname') }}">
+                        <input type="text" name="firstname" id="firstname" class="form-control input-sm" placeholder="First Name" value="{{ old('firstname') }}">
                           </div>
                         </div>
                       </div>
@@ -52,7 +54,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                              <input type="text" name="name_middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name" value="{{ old('name_middlename') }}">
+                              <input type="text" name="middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name" value="{{ old('middlename') }}">
                             </div>
                         </div>
                       </div>
@@ -63,7 +65,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_lastname" id="lastname" class="form-control input-sm" placeholder="Last Name" value="{{ old('name_lastname') }}">
+                        <input type="text" name="lastname" id="lastname" class="form-control input-sm" placeholder="Last Name" value="{{ old('lastname') }}">
                             </div>
                         </div>
                       </div>
@@ -85,7 +87,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                              <input type="password" name="name_password" id="password" class="form-control input-sm" placeholder="Password">
+                              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
                           </div>
                        </div>
                     </div>
@@ -96,7 +98,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                              <input type="password" name="name_password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                             </div>
                           </div>
                         </div>
@@ -108,14 +110,14 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
-                          <input type="text" class="form-control input-sm" id="address" name="name_address" placeholder="Address" value="{{ old('name_address') }}">
+                          <input type="text" class="form-control input-sm" id="address" name="address" placeholder="Address" value="{{ old('address') }}">
                       </div>
                   </div>
                 </div>
 
                 <div class="form-group">
                     
-                    <select id="country" name="name_country" class="form-control" >
+                    <select id="country" name="country" class="form-control" >
                       <option value="" disabled selected>Select your Country</option>
                       <option value=""></option>
                       <option value="Afghanistan">Afghanistan</option>
@@ -320,7 +322,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mobile-phone" aria-hidden="true"></i></span>
-                              <input type="text" name="name_mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number" value="{{ old('name_mobile') }}">
+                              <input type="text" name="mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number" value="{{ old('mobile') }}">
                           </div>
                         </div>
                       </div>
@@ -331,7 +333,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <input type="text" name="name_course" id="course" class="form-control input-sm" placeholder="Course" value="{{ old('name_course') }}">
+                        <input type="text" name="course" id="course" class="form-control input-sm" placeholder="Course" value="{{ old('course') }}">
                             </div>
                         </div>   
                       </div>
@@ -342,7 +344,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                              <input type="text" name="name_batch" id="batch" class="form-control input-sm" placeholder="Batch" value="{{ old('name_batch') }}">
+                              <input type="text" name="batch" id="batch" class="form-control input-sm" placeholder="Batch" value="{{ old('batch') }}">
                             </div>
                         </div>
                       </div>
@@ -354,7 +356,7 @@
                    <div class="cols-sm-10">
                         <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-group" aria-hidden="true"></i></span>
-                              <input type="text" class="form-control input-sm" id="membership" name="name_membership" placeholder="Membership" value="{{ old('name_membership') }}">
+                              <input type="text" class="form-control input-sm" id="membership" name="membership" placeholder="Membership" value="{{ old('membership') }}">
                         </div>
                       </div>
                     </div>

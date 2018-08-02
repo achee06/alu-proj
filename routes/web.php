@@ -27,7 +27,7 @@ Route::get('pages/index', function () {
 
 Route::get('pages/registration', function () {
     return view('Registration');
-})->middleware('buildnavbar');
+})->middleware('buildnavbar')->name('registrationIndex');
 
 Route::get('pages/login', function () {
     return view('login');

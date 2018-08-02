@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CmsUserDetails extends Model
+class UserDetails extends Model
 {
     //
     public function user()

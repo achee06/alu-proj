@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use App\RegistrationModel;
+use App\CmsUsers;
+use App\UserDetails;
 class RegisterController extends Controller
 {
     //
@@ -16,47 +20,47 @@ class RegisterController extends Controller
     {
 		 $this->validate($request, [
 		            'email' => 'required|email|unique:cms_users',
-		            'name_password' => 'required|min:6|confirmed',
-		            'name_password_confirmation' => 'required|min:6',
-		            'name_firstname' => 'required',
-		            'name_middlename' => 'required',
-		            'name_lastname' => 'required',
-		            'name_address' => 'required',
-		            'name_country' => 'required',
-		            'name_mobile' => 'required',
-		            'name_course' => 'required',
-		            'name_batch' => 'required|integer',
-		            'name_membership' => 'required'
+		            'password' => 'required|min:6|confirmed',
+		            'password_confirmation' => 'required|min:6',
+		            'firstname' => 'required',
+		            'middlename' => 'required',
+		            'lastname' => 'required',
+		            'address' => 'required',
+		            'country' => 'required',
+		            'mobile' => 'required',
+		            'course' => 'required',
+		            'batch' => 'required|integer',
+		            'membership' => 'required'
 
 		        ]);
-		 $name = $request->get('name_firstname').' '.$request->get('name_middlename').' '.$request->get('name_lastname');
+		 $name = $request->get('firstname').' '.$request->get('middlename').' '.$request->get('lastname');
 
-        $password = Hash::make($request->input('name_password'));
+        $password = Hash::make($request->input('password'));
 
 
         $cms_user = new CmsUsers;  
-		$cms_user->name  = $request->get('name_firstname');
+		$cms_user->name  = $request->get('firstname');
 		$cms_user->email = $request->get('email');
 		$cms_user->password = $password;
 		$cms_user->id_cms_privileges = 3; 
 		$cms_user->save();
 
-		$cms_user_details= new CmsUserDetails;
+		$cms_user_details= new UserDetails;
 		 //$register->email = $request->input('email');
 		 //$register->email = $request->input('name_password');
-		 $cms_user_details->firstname =$request->get('name_firstname');
-		 $cms_user_details->middlename=$request->get('name_middlename');
-		 $cms_user_details->lastname = $request->get('name_lastname');
-		 $cms_user_details->address = $request->get('name_address');
-		 $cms_user_details->country = $request->get('name_country');
-		 $cms_user_details->mobile = $request->get('name_mobile');
-		 $cms_user_details->course = $request->get('name_course');
-		 $cms_user_details->batch = $request->get('name_batch');
-		 $cms_user_details->membership = $request->get('name_membership');
+		 $cms_user_details->firstname =$request->get('firstname');
+		 $cms_user_details->middlename=$request->get('middlename');
+		 $cms_user_details->lastname = $request->get('lastname');
+		 $cms_user_details->address = $request->get('address');
+		 $cms_user_details->country = $request->get('country');
+		 $cms_user_details->mobile = $request->get('mobile');
+		 $cms_user_details->course = $request->get('course');
+		 $cms_user_details->batch = $request->get('batch');
+		 $cms_user_details->membership = $request->get('membership');
 
 		 $cms_user->user_details()->save($cms_user_details);
 
-		 return redirect('pages/registration');
+		return redirect()->route('registrationIndex')->with('success_message', 'You are successfuly registered. We are processing your account.');
 		 
     }
 
