@@ -33,6 +33,10 @@ Route::get('pages/login', function () {
     return view('login');
 })->middleware('buildnavbar')->name('login');
 
+Route::get('admin/login', function () {
+    return redirect('admin/login');
+})->name('adminLogin');
+
 Route::post('pages/login', 'LoginController@postLogin')->middleware('buildnavbar')->name('post_login');
 
 Route::resource('pages/registration/success', 'RegisterController');

@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="col-md-10">
-          Welcome Mr./Ms. {lname} to your alumni panel!
+          Welcome Mr./Ms. {{ session('admin_name') }} to your alumni panel!
         </div>    
       </div>
     </div>
