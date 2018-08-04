@@ -33,7 +33,7 @@ Route::get('user/dashboard', function()
 Route::get('user/tracer', function()
     {
         return View('User/tracer');
-    })->middleware('buildnavbar');
+    })->middleware('buildnavbar
 
 Route::get('pages/index', function () {
     return redirect('/');
