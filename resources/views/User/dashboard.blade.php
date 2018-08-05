@@ -6,8 +6,8 @@
 		<div class="col-md-4">
 			<div class="btn_container">
 				<div class="btn-group btn_display">
-		  			<button type="button" class="btn usr_btn">Profile</button>
-		  			<button type="button" class="btn usr_btn">Tracer</button>
+		  			<button onclick="location.href='{{ url('user/dashboard') }}'"type="button" class="btn usr_btn">Profile</button>
+		  			<button onclick="location.href='{{ url('user/tracer') }}'" class="btn usr_btn">Tracer</button>
 		  			<button type="button" class="btn usr_btn">Year Book</button>
 				</div>
 			</div>
