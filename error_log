@@ -1,0 +1,4 @@
+[21-Jul-2018 16:35:15 UTC] PHP Warning:  require(/home/princeglensa/alu-proj/vendor/autoload.php): failed to open stream: No such file or directory in /home/princeglensa/alu-proj/artisan on line 18
+[21-Jul-2018 16:35:15 UTC] PHP Fatal error:  require(): Failed opening required '/home/princeglensa/alu-proj/vendor/autoload.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/princeglensa/alu-proj/artisan on line 18
+[21-Jul-2018 16:35:57 UTC] PHP Warning:  require(/home/princeglensa/alu-proj/vendor/autoload.php): failed to open stream: No such file or directory in /home/princeglensa/alu-proj/artisan on line 18
+[21-Jul-2018 16:35:57 UTC] PHP Fatal error:  require(): Failed opening required '/home/princeglensa/alu-proj/vendor/autoload.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/princeglensa/alu-proj/artisan on line 18

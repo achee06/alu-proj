@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="hvr col-xs-3 col-centered">
-			 <img src="{{URL::asset('images/controlpanel.png')}}" alt="Avatar" class="imagehvr" >
+			 <img src="{{URL::asset('images/controlPanel.png')}}" alt="Avatar" class="imagehvr" >
 			  	<div class="middlehvr">
 			  		<button style="cursor:pointer" type="submit" class="btn btn-info btn-block">CONTROL PANEL</button>
 			  </div>
