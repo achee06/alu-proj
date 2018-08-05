@@ -34,6 +34,9 @@ class LoginController extends \crocodicstudio\crudbooster\controllers\CBControll
             return redirect()->back()->with('message', "Your account is inactive. Please Contact the management.");
          /* Archere */
 
+        if($users->id_cms_privileges != 3)
+            return redirect()->back()->with('message', "Please use Control Panel Login.");
+
         if (\Hash::check($password, $users->password)) {
             $priv = DB::table("cms_privileges")->where("id", $users->id_cms_privileges)->first();
 
@@ -61,10 +64,7 @@ class LoginController extends \crocodicstudio\crudbooster\controllers\CBControll
             {  				
                 return view('user-panel');
             }
-            else
-            {
-            	return view(CRUDBooster::adminPath());
-            }
+
              /* Archere */
         } else {
             return redirect()->back()->with('message', trans('crudbooster.alert_password_wrong'));

@@ -1,41 +1,81 @@
 @extends('alumni')
  
 @section('content')
+<div class="container dashboard_container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="btn_container">
+				<div class="btn-group btn_display">
+		  			<button onclick="location.href='{{ url('user/dashboard') }}'"type="button" class="btn usr_btn">Profile</button>
+		  			<button onclick="location.href='{{ url('user/tracer') }}'" class="btn usr_btn">Tracer</button>
+		  			<button type="button" class="btn usr_btn">Year Book</button>
+				</div>
+			</div>
+		</div>
+		
+			<div class="col-md-7" style="margin-top: 1rem;">
+				
+	    			<a href="" class="btn btn-default btn-rounded mb-4 btn_design" data-toggle="modal" data-target="#modalLoginForm"><i class="fa fa-gears "></i></a>
 
+				
+					<div class="col-md-4">
+						<div class="image-cropper">
+						  <img src="{{URL::asset('images/te1.jpg')}}" alt="avatar" class="profile-pic">
+						</div>
+					</div>
 
- <div class="container">
+					<div class="col-md-8">
+						<label class="display_name">RICHARD RICHARD</label>
+					</div>
+			</div>
+			<div class="col-md-7 whole_container">
+				<div class="display_container">
+					<div class="display_details input-group">
+						 <span class=""><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+						<label class="">Email Address: </label>
+						<p>asdf</p>
+					</div>
+					<div class="display_details input-group">
+						 <span class=""><i class="fa fa-address-book" aria-hidden="true"></i></span>
+						<label class="">Address: </label>
+						<p>asdf</p>
+					</div>
+					<div class="display_details">
+						
+						<label class="">Country: </label>
+						<p>asdf</p>
+					</div>
+					<div class="display_details input-group">
+						 <span class=""><i class="fa fa-mobile-phone" aria-hidden="true"></i></span>
+						<label class="">Mobile Number: </label>
+						<p>asdf</p>
+					</div>
+					<div class="display_details input-group">
+						 <span class=""><i class="fa fa-pencil" aria-hidden="true"></i></span>
+						<label class="">Course: </label>
+						<p>asdf</p>
+					</div>
+					<div class="display_details input-group">
+						 <span class=""><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
+						<label class="">Batch: </label>
+						<p>asdf</p>
+					</div>
+				</div>
+			</div>
+		
+	</div>
+</div>
 
-      <div class="row">
-
-        <!-- Post Content Column -->
-        
-        
-
-             @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
-              @if(session()->has('success_message'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  </button>
-                  <strong>{{ session('success_message') }}</strong>               
-                </div>
-              @endif
-
-        
-          <div class="panel panel-default form_background">
-            <div class="panel-heading">
-              <h3 class="panel-title title-header">Membership Registration</h3>
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Edit</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="panel-body">
-              <form method="POST" action="{{url ('pages/registration/success') }}">
-                 {{ csrf_field() }}
+            <div class="modal-body mx-3"> 
 
                 <div class="row">
                     <div class="col-xs-4 col-sm-4 col-md-4">
@@ -43,7 +83,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="firstname" id="firstname" class="form-control input-sm" placeholder="First Name" value="{{ old('firstname') }}">
+                        <input type="text" name="name_firstname" id="firstname" class="form-control input-sm" placeholder="First Name">
                           </div>
                         </div>
                       </div>
@@ -54,7 +94,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                              <input type="text" name="middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name" value="{{ old('middlename') }}">
+                              <input type="text" name="name_middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name">
                             </div>
                         </div>
                       </div>
@@ -65,7 +105,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="lastname" id="lastname" class="form-control input-sm" placeholder="Last Name" value="{{ old('lastname') }}">
+                        <input type="text" name="name_lastname" id="lastname" class="form-control input-sm" placeholder="Last Name">
                             </div>
                         </div>
                       </div>
@@ -76,7 +116,7 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                          <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" value="{{ old('email') }}">
+                          <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
                       </div>
                   </div>
                 </div>
@@ -87,7 +127,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                              <input type="password" name="name_password" id="password" class="form-control input-sm" placeholder="Password">
                           </div>
                        </div>
                     </div>
@@ -98,7 +138,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                              <input type="password" name="name_password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                             </div>
                           </div>
                         </div>
@@ -110,14 +150,14 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
-                          <input type="text" class="form-control input-sm" id="address" name="address" placeholder="Address" value="{{ old('address') }}">
+                          <input type="text" class="form-control input-sm" id="address" name="name_address" placeholder="Address">
                       </div>
                   </div>
                 </div>
 
                 <div class="form-group">
                     
-                    <select id="country" name="country" class="form-control" >
+                    <select id="country" name="name_country" class="form-control" >
                       <option value="" disabled selected>Select your Country</option>
                       <option value=""></option>
                       <option value="Afghanistan">Afghanistan</option>
@@ -322,7 +362,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mobile-phone" aria-hidden="true"></i></span>
-                              <input type="text" name="mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number" value="{{ old('mobile') }}">
+                              <input type="text" name="name_mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number">
                           </div>
                         </div>
                       </div>
@@ -333,7 +373,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <input type="text" name="course" id="course" class="form-control input-sm" placeholder="Course" value="{{ old('course') }}">
+                        <input type="text" name="name_course" id="course" class="form-control input-sm" placeholder="Course">
                             </div>
                         </div>   
                       </div>
@@ -344,7 +384,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                              <input type="text" name="batch" id="batch" class="form-control input-sm" placeholder="Batch" value="{{ old('batch') }}">
+                              <input type="text" name="name_batch" id="batch" class="form-control input-sm" placeholder="Batch">
                             </div>
                         </div>
                       </div>
@@ -356,138 +396,23 @@
                    <div class="cols-sm-10">
                         <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-group" aria-hidden="true"></i></span>
-                              <input type="text" class="form-control input-sm" id="membership" name="membership" placeholder="Membership" value="{{ old('membership') }}">
+                              <input type="text" class="form-control input-sm" id="membership" name="name_membership" placeholder="Membership">
                         </div>
                       </div>
                     </div>
 
                 
+                
+              
+              
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
                 <button style="cursor:pointer" type="submit" class="btn btn-info btn-block">Submit</button>
-              
-              </form>
             </div>
-        
         </div>
-      
-          
-        
-          
-              
-        
-
-        @if(Request::is('/'))
-
-          <div class="col-md-4 side_officer">
-            <div class="nav-title">Officer and<br> Board Members</div>
-            <div class="content-officer">
-              <p class="side-content">
-                <span class="side-name">Engr. Rudith Elena Campos-Joson</span><br>
-                <span class="side-title">President</span>
-              </p>
-              <p class="side-content">
-                <span class="side-name">Engr. Ernesto J. Casis, PME</span><br>
-                <span class="side-title">1st Vice-President</span>
-              </p>
-
-              <p class="side-content">
-                <span class="side-name">Engr. Clarito N. Sison</span><br>
-                <span class="side-title">2nd Vice-President</span>
-              </p>
-              <p class="side-content">
-                <span class="side-name">Ms. Mary Grace Esteve-Chua</span><br>
-                <span class="side-title">Secretary</span>
-              </p>
-              <p class="side-content">
-                <span class="side-name">Ms. Bernardita H. Leyva</span><br>
-                <span class="side-title">Treasurer</span>
-              </p>
-              <p class="side-content">
-                <span class="side-name">Mr. Jaime M. Molino, CPA</span><br>
-                <span class="side-title">Auditor</span>
-              </p>
-              <p class="side-content">
-                <span class="side-name">Ms. Virginia Ugalde-Ramos</span><br>
-                <span class="side-title">Business Manager</span>
-              </p>
-              
-              <p class="side-content">
-                <span class="side-name">Mr. Glen Jose Y. Saño, MIT</span><br>
-                <span class="side-title">P.R.O.</span>
-              </p>
-
-              <p class="side-content">
-                <span class="side-name">Engr. Joel C. Herrera, PME</span><br>
-                <span class="side-name">Engr. Enrique A. Macaspac</span><br>
-                <span class="side-name">Engr. Aladino M. Abulencia</span><br>
-                <span class="side-name">Arch. Patrick T. Ellazar</span><br>
-                <span class="side-name">Ms. Mercidita D. Cruz</span><br>
-                <span class="side-name">Capt. Reynaldo P. Derige</span><br>
-                <span class="side-name">Ms. Gina S. Chavez</span><br>
-                <span class="side-title">Board Of Directors</span>
-              </p>
-
-              <p class="side-content">
-                <span class="side-name">Engr. Arturo P. Barrameda (IPP)</span><br>
-                <span class="side-name">Engr. Dante C. Valencia</span><br>
-                <span class="side-name">Engr. Ernesto D. Leyva</span><br>
-                <span class="side-name">Engr. Alfredo F. Villarin</span><br>
-                <span class="side-title">Advisers</span>
-              </p>
-            </div>
-          </div>
-       
-        <!-- Sidebar Widgets Column -->
-        <!-- <div class="col-md-4"> -->
-
-          <!-- Search Widget -->
-         <!--  <div class="card my-4">
-            <h5 class="card-header">Search</h5>
-            <div class="card-body">
-              <form method="get" action="{{ url('search') }}">
-                <div class="input-group form-inline">
-                  <input type="text" name="search_text"class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="submit"><i class="fas fa-search"></i></button>
-                  </span>
-                </div>
-              </form>
-            </div>
-          </div> -->
-
-          <!-- Categories Widget -->
-          <!-- <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="{{ url('category/latest') }}">Latest</a>
-                    </li>
-                    <li>
-                      <a href="{{ url('category/News') }}">News</a>
-                    </li>
-                    <li>
-                      <a href="{{ url('category/Events') }}">Events</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- Side Widget
-           <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
-            <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-            </div> 
-          </div>-->
-          
-        </div>
-        @endif
-      
-      <!-- /.row -->
-
     </div>
-  </div>
+</div>
+
+
 @endsection
