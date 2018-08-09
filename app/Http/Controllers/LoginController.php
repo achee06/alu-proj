@@ -7,6 +7,8 @@ use Session;
 use DB;
 use CRUDBooster;
 use Validator;
+use App\CmsUsers;
+use App\UserDetails;
 
 class LoginController extends \crocodicstudio\crudbooster\controllers\CBController
 {
@@ -61,8 +63,10 @@ class LoginController extends \crocodicstudio\crudbooster\controllers\CBControll
 
              /* Archere */
             if($users->id_cms_privileges === 3)
-            {  				
-                return view('user-panel');
+            {
+                $userDetails = CmsUsers::join('user_details', 'user_details.cms_user_id', '=', 'cms_users.id')->where('cms_users.id',$users->id)->first();  	
+                //dd($userDetails);			
+                return view('user-panel',$userDetails);
             }
 
              /* Archere */
