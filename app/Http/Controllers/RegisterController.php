@@ -8,12 +8,16 @@ use Illuminate\Support\Facades\Hash;
 use App\RegistrationModel;
 use App\CmsUsers;
 use App\UserDetails;
+use App\Courses;
+use Mail;
 class RegisterController extends Controller
 {
     //
     public function create()
     {
-		 return view('pages/registration');
+    	$data['courses'] = Courses::all();
+    	
+		return view('registration',$data);
     }
 
      public function store(Request $request)
@@ -60,6 +64,8 @@ class RegisterController extends Controller
 
 		 $cms_user->user_details()->save($cms_user_details);
 
+		/* Sending of email */
+		
 		return redirect()->route('registrationIndex')->with('success_message', 'You are successfuly registered. We are processing your account.');
 		 
     }

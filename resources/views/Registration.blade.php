@@ -21,7 +21,7 @@
                   </div>
               @endif
               @if(session()->has('success_message'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <div class="alert alert-success" role="alert">
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   </button>
                   <strong>{{ session('success_message') }}</strong>               
@@ -118,8 +118,7 @@
                 <div class="form-group">
                     
                     <select id="country" name="country" class="form-control" >
-                      <option value="" disabled selected>Select your Country</option>
-                      <option value=""></option>
+                      <option value="" disabled selected>Select your Country</option>                      
                       <option value="Afghanistan">Afghanistan</option>
                       <option value="Albania">Albania</option>
                       <option value="Algeria">Algeria</option>
@@ -333,7 +332,13 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <input type="text" name="course" id="course" class="form-control input-sm" placeholder="Course" value="{{ old('course') }}">
+                        <!-- <input type="text" name="course" id="course" class="form-control input-sm" placeholder="Course" value="{{ old('course') }}"> -->
+                              <select id="membership" name="membership" class="form-control" >
+                                <option value="" disabled selected></option>
+                                @foreach($courses as $key => $course)
+                                  <option value="{{ $course->name }}">{{ $course->name }}</option>
+                                @endforeach
+                              </select>
                             </div>
                         </div>   
                       </div>
@@ -356,7 +361,12 @@
                    <div class="cols-sm-10">
                         <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-group" aria-hidden="true"></i></span>
-                              <input type="text" class="form-control input-sm" id="membership" name="membership" placeholder="Membership" value="{{ old('membership') }}">
+                              <!-- <input type="text" class="form-control input-sm" id="membership" name="membership" placeholder="Membership" value="{{ old('membership') }}"> -->
+                              <select id="membership" name="membership" class="form-control" >
+                                <option value="" disabled selected></option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Yearly">Yearly</option>
+                              </select>
                         </div>
                       </div>
                     </div>

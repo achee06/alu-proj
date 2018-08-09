@@ -39,9 +39,7 @@ Route::get('pages/index', function () {
     return redirect('/');
 })->middleware('buildnavbar');
 
-Route::get('pages/registration', function () {
-    return view('Registration');
-})->middleware('buildnavbar')->name('registrationIndex');
+Route::get('pages/registration', 'RegisterController@create')->middleware('buildnavbar')->name('registrationIndex');
 
 Route::get('pages/login', function () {
     return view('login');
