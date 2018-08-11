@@ -25,10 +25,7 @@ Route::get('pages/gallery', function()
         return View::make('gallery');
     })->middleware('buildnavbar');
 
-Route::get('user/dashboard', function()
-    {
-        return View('User/dashboard');
-    })->middleware('buildnavbar');
+Route::get('user/dashboard', 'LoginController@userDashboard')->middleware('buildnavbar');
 
 Route::get('user/tracer', function()
     {

@@ -25,7 +25,7 @@
 					</div>
 
 					<div class="col-md-8">
-						<label class="display_name">RICHARD RICHARD</label>
+						<label class="display_name">{{ $userDetails->firstname.' '.$userDetails->lastname }}</label>
 					</div>
 			</div>
 			<div class="col-md-7 whole_container">
@@ -33,32 +33,32 @@
 					<div class="display_details input-group">
 						 <span class=""><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
 						<label class="">Email Address: </label>
-						<p>asdf</p>
+						<p>{{ $userDetails->email }}</p>
 					</div>
 					<div class="display_details input-group">
 						 <span class=""><i class="fa fa-address-book" aria-hidden="true"></i></span>
 						<label class="">Address: </label>
-						<p>asdf</p>
+						<p>{{ $userDetails->address }}</p>
 					</div>
 					<div class="display_details">
 						
 						<label class="">Country: </label>
-						<p>asdf</p>
+						<p>{{ $userDetails->country }}</p>
 					</div>
 					<div class="display_details input-group">
 						 <span class=""><i class="fa fa-mobile-phone" aria-hidden="true"></i></span>
 						<label class="">Mobile Number: </label>
-						<p>asdf</p>
+						<p>{{ $userDetails->mobile }}</p>
 					</div>
 					<div class="display_details input-group">
 						 <span class=""><i class="fa fa-pencil" aria-hidden="true"></i></span>
 						<label class="">Course: </label>
-						<p>asdf</p>
+						<p>{{ $userDetails->course }}</p>
 					</div>
 					<div class="display_details input-group">
 						 <span class=""><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
 						<label class="">Batch: </label>
-						<p>asdf</p>
+						<p>{{ $userDetails->batch }}</p>
 					</div>
 				</div>
 			</div>
@@ -83,7 +83,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_firstname" id="firstname" class="form-control input-sm" placeholder="First Name">
+                        <input type="text" name="name_firstname" id="firstname" class="form-control input-sm" placeholder="First Name" value="{{ $userDetails->firstname }}">
                           </div>
                         </div>
                       </div>
@@ -94,7 +94,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                              <input type="text" name="name_middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name">
+                              <input type="text" name="name_middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name" value="{{ $userDetails->middlename }}">
                             </div>
                         </div>
                       </div>
@@ -105,7 +105,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_lastname" id="lastname" class="form-control input-sm" placeholder="Last Name">
+                        <input type="text" name="name_lastname" id="lastname" class="form-control input-sm" placeholder="Last Name" value="{{ $userDetails->lastname }}">
                             </div>
                         </div>
                       </div>
@@ -116,7 +116,7 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                          <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                          <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" value="{{ $userDetails->email }}">
                       </div>
                   </div>
                 </div>
@@ -127,7 +127,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                              <input type="password" name="name_password" id="password" class="form-control input-sm" placeholder="Password">
+                              <input type="password" name="name_password" id="password" class="form-control input-sm" placeholder="Password" >
                           </div>
                        </div>
                     </div>
@@ -150,7 +150,7 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
-                          <input type="text" class="form-control input-sm" id="address" name="name_address" placeholder="Address">
+                          <input type="text" class="form-control input-sm" id="address" name="name_address" placeholder="Address" value="{{ $userDetails->address }}">
                       </div>
                   </div>
                 </div>
@@ -160,7 +160,7 @@
                     <select id="country" name="name_country" class="form-control" >
                       <option value="" disabled selected>Select your Country</option>
                       <option value=""></option>
-                      <option value="Afghanistan">Afghanistan</option>
+                      <option {{ $userDetails->country == "Afghanistan" ? 'selected' : '' }} value="Afghanistan">Afghanistan</option>
                       <option value="Albania">Albania</option>
                       <option value="Algeria">Algeria</option>
                       <option value="Andorra">Andorra</option>
@@ -196,7 +196,7 @@
                       <option value="Chile">Chile</option>
                       <option value="China">China</option>
                       <option value="Colombia">Colombia</option>
-                      <option value="Comoros">Comoros</option>
+                      <option {{ $userDetails->country == "Comoros" ? 'selected' : '' }} value="Comoros">Comoros</option>
                       <option value="Congo">Congo</option>
                       <option value="Costa Rica">Costa Rica</option>
                       <option value="Cote d'Ivoire">Cote d'Ivoire</option>
@@ -362,7 +362,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mobile-phone" aria-hidden="true"></i></span>
-                              <input type="text" name="name_mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number">
+                              <input type="text" name="name_mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number" value="{{ $userDetails->mobile }}">
                           </div>
                         </div>
                       </div>
@@ -373,7 +373,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <input type="text" name="name_course" id="course" class="form-control input-sm" placeholder="Course">
+                        <input type="text" name="name_course" id="course" class="form-control input-sm" placeholder="Course" value="{{ $userDetails->course }}" disabled="">
                             </div>
                         </div>   
                       </div>
@@ -384,7 +384,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                              <input type="text" name="name_batch" id="batch" class="form-control input-sm" placeholder="Batch">
+                              <input type="text" name="name_batch" id="batch" class="form-control input-sm" placeholder="Batch" value="{{ $userDetails->batch }}" disabled="">
                             </div>
                         </div>
                       </div>
@@ -396,7 +396,7 @@
                    <div class="cols-sm-10">
                         <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-group" aria-hidden="true"></i></span>
-                              <input type="text" class="form-control input-sm" id="membership" name="name_membership" placeholder="Membership">
+                              <input type="text" class="form-control input-sm" id="membership" name="name_membership" placeholder="Membership" value="{{ $userDetails->membership }}" disabled="">
                         </div>
                       </div>
                     </div>

@@ -64,9 +64,9 @@ class LoginController extends \crocodicstudio\crudbooster\controllers\CBControll
              /* Archere */
             if($users->id_cms_privileges === 3)
             {
-                $userDetails = CmsUsers::join('user_details', 'user_details.cms_user_id', '=', 'cms_users.id')->where('cms_users.id',$users->id)->first();  	
+                $data['userDetails'] = CmsUsers::join('user_details', 'user_details.cms_user_id', '=', 'cms_users.id')->where('cms_users.id',$users->id)->first();  	
                 //dd($userDetails);			
-                return view('user-panel',$userDetails);
+                return view('user.dashboard',$data);
             }
 
              /* Archere */
@@ -97,4 +97,13 @@ class LoginController extends \crocodicstudio\crudbooster\controllers\CBControll
 	  //Please use cbView method instead view method from laravel
 	  $this->cbView('custom',$data);
 	}
+
+    public function userDashboard()
+    {
+        $user_id = session('admin_id');
+        //dd($user_id);
+        $data['userDetails'] = CmsUsers::join('user_details', 'user_details.cms_user_id', '=', 'cms_users.id')->where('cms_users.id',$user_id)->first();  
+
+         return view('user.dashboard',$data);
+    }
 }

@@ -333,7 +333,7 @@
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
                         <!-- <input type="text" name="course" id="course" class="form-control input-sm" placeholder="Course" value="{{ old('course') }}"> -->
-                              <select id="membership" name="membership" class="form-control" >
+                              <select id="course" name="course" class="form-control" >
                                 <option value="" disabled selected></option>
                                 @foreach($courses as $key => $course)
                                   <option value="{{ $course->name }}">{{ $course->name }}</option>
