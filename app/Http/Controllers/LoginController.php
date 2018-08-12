@@ -77,12 +77,14 @@ class LoginController extends \crocodicstudio\crudbooster\controllers\CBControll
 
     public function getLogin()
     {
+        if(!empty(session('admin_id')) && session('admin_privileges')  == 3)
+            return redirect('user/dashboard');
 
-        if (CRUDBooster::myId()) {
+        /*if (CRUDBooster::myId()) {
             return redirect(CRUDBooster::adminPath());
-        }
+        }*/
 
-        return view('crudbooster::login');
+        return view('login');
     }
 
     public function getAdd() {
