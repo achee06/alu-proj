@@ -456,7 +456,7 @@ border-color: #16106f;
 #menu-0 .nav-dropdown-sm .link:hover,
 #menu-0 .nav-dropdown-sm .dropdown-item:focus,
 #menu-0 .nav-dropdown-sm .dropdown-item:hover {
-  background: #202020!important;
+  /*background: #202020!important;*/
 }
 #menu-0 .navbar,
 #menu-0 .nav-dropdown-sm,

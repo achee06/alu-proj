@@ -1,5 +1,5 @@
 @extends('alumni')
- 
+ <title> Login </title>
 @section('content')
 	<link href="{{asset('vendor/crudbooster/assets/adminlte/dist/css/AdminLTE.min.css')}}" rel="stylesheet" type="text/css"/>
 	<link rel='stylesheet' href='{{asset("vendor/crudbooster/assets/css/main.css")}}'/>

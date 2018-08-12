@@ -1,5 +1,5 @@
 @extends('alumni')
- 
+ <title>{{ $page_content->title  }}</title>
 @section('content')
  
     <div class="jumbotron">

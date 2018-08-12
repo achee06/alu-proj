@@ -1,6 +1,24 @@
 
 
 /*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1824px) { 
+	.ytvid{
+		height: 250px;
+		width: 100%;
+	}
+	.side_officer{
+		margin:left;
+	}
+	.menu-icon-container{
+		max-width: 100% !important;
+	}
+ }
+@media (max-width: 1280px) { 
+	.ytvid{
+		height: 150px;
+		width: 100%;
+	}
+ }
 @media (max-width: 1200px) { 
 	.ytvid{
 		height: 150px;
@@ -8,7 +26,17 @@
 	}
  }
 
+@media (max-width: 1024px) { 
+.btn-info{
+		font-size: 7px;
+	}
+	.nav-item a {
+		font-size: 8px!important;
+		
+	}
 
+
+}
 
 /*Large devices (desktops, 992px and up)*/
 @media (max-width: 992px) { 
