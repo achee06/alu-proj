@@ -18,11 +18,11 @@
 	    			<a href="" class="btn btn-default btn-rounded mb-4 btn_design" data-toggle="modal" data-target="#modalLoginForm"><i class="fa fa-gears "></i></a>
 
 				
-					<div class="col-md-4">
+					<!-- <div class="col-md-4">
 						<div class="image-cropper">
 						  <img src="{{URL::asset('images/te1.jpg')}}" alt="avatar" class="profile-pic">
 						</div>
-					</div>
+					</div> -->
 
 					<div class="col-md-8">
 						<label class="display_name">{{ $userDetails->firstname.' '.$userDetails->lastname }}</label>
