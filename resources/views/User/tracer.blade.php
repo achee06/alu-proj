@@ -1,5 +1,5 @@
 @extends('alumni')
- 
+  <title>User - Tracer</title>
 @section('content')
 
 

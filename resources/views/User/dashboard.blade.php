@@ -1,5 +1,5 @@
 @extends('alumni')
- 
+ <title>User - Dashboard</title>
 @section('content')
 <div class="container dashboard_container">
 	<div class="row">
