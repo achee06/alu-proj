@@ -65,7 +65,7 @@ class LoginController extends \crocodicstudio\crudbooster\controllers\CBControll
             if($users->id_cms_privileges === 3)
             {
                 $data['userDetails'] = CmsUsers::join('user_details', 'user_details.cms_user_id', '=', 'cms_users.id')->where('cms_users.id',$users->id)->first();  	
-                //dd($userDetails);			
+                //dd($data);			
                 return view('user.dashboard',$data);
             }
 
