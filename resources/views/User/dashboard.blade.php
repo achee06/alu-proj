@@ -3,17 +3,10 @@
 @section('content')
 <div class="container dashboard_container">
 	<div class="row">
-		<div class="col-md-4">
-			<div class="btn_container">
-				<div class="btn-group btn_display">
-		  			<button onclick="location.href='{{ url('user/dashboard') }}'"type="button" class="btn usr_btn">Profile</button>
-		  			<button onclick="location.href='{{ url('user/tracer') }}'" class="btn usr_btn">Tracer</button>
-		  			<button type="button" class="btn usr_btn">Year Book</button>
-				</div>
-			</div>
-		</div>
 		
-			<div class="col-md-7" style="margin-top: 1rem;">
+     @include('User/navbarU')
+		
+			<div  style="margin-top: 1rem;">
 				
 	    			<a href="" class="btn btn-default btn-rounded mb-4 btn_design" data-toggle="modal" data-target="#modalLoginForm"><i class="fa fa-gears "></i></a>
 
@@ -24,11 +17,11 @@
 						</div>
 					</div> -->
 
-					<div class="col-md-8">
+					<div>
 						<label class="display_name">{{ $userDetails->firstname.' '.$userDetails->lastname }}</label>
 					</div>
 			</div>
-			<div class="col-md-7 whole_container">
+			<div class="whole_container">
 				<div class="display_container">
 					<div class="display_details input-group">
 						 <span class=""><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
@@ -400,12 +393,6 @@
                         </div>
                       </div>
                     </div>
-
-                
-                
-              
-              
-
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button style="cursor:pointer" type="submit" class="btn btn-info btn-block">Submit</button>

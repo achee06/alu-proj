@@ -23,12 +23,12 @@
           ?>
 
           <div class="row"> 
-            <div class="col-xs-12 col-sm-2 col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-2">
                 <a href="#">
                     <img src="{{$image}}" class="img-responsive img-box img-thumbnail"> 
                 </a>
             </div> 
-            <div class="col-xs-12 col-sm-9 col-md-9 ann-content">
+            <div class="col-xs-12 col-sm-12 col-md-9 ann-content">
                 <h4><a href='{{ url("article/".$row->slug) }}' title="{{ $row->title }}" target="_parent">{{ $row->title }}</a></h4>
                 <div class="list-group">
                     <!-- <div class="list-group-item"> -->

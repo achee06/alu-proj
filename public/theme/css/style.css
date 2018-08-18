@@ -2429,12 +2429,12 @@ text-align:center;
 }
 .usr_btn
 {
-  width: 100%;
+  width: 200px;
   margin:0px;
   background: linear-gradient(to right, gold, goldenrod);
   border-color: #ffffff;
   color:#000!important;
-  font-size: 15px;
+  font-size: 10px;
 }
 .usr_btn:hover,
 .usr_btn:focus,
@@ -2482,7 +2482,7 @@ text-align:center;
   display:inline;
 }
 .btn_container{
-  height: 500px;
+  text-align: center;
 }
 .display_container{
   font-size: 20px;
@@ -2498,13 +2498,7 @@ font-weight: bold;
   font-size: 20px
 }
 .whole_container{
-  border: 1px solid black;
-margin-top: 1rem;
-margin-bottom: 1rem;
-border-radius: 4px;
--moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
+  margin: 2rem;
 }
 
 
