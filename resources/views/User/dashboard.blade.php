@@ -59,7 +59,7 @@
 	</div>
 </div>
 
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
@@ -68,6 +68,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+          <form method="post" action="{{ route('profile.store') }}">
+            {{ csrf_field() }}
+            <input type="hidden" name="user_id" value="{{ $userDetails->cms_user_id }}">
             <div class="modal-body mx-3"> 
 
                 <div class="row">
@@ -76,7 +79,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_firstname" id="firstname" class="form-control input-sm" placeholder="First Name" value="{{ $userDetails->firstname }}">
+                        <input type="text" name="firstname" id="firstname" class="form-control input-sm" placeholder="First Name" value="{{ $userDetails->firstname }}">
                           </div>
                         </div>
                       </div>
@@ -87,7 +90,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                              <input type="text" name="name_middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name" value="{{ $userDetails->middlename }}">
+                              <input type="text" name="middlename" id="middlename" class="form-control input-sm" placeholder="Middle Name" value="{{ $userDetails->middlename }}">
                             </div>
                         </div>
                       </div>
@@ -98,7 +101,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                        <input type="text" name="name_lastname" id="lastname" class="form-control input-sm" placeholder="Last Name" value="{{ $userDetails->lastname }}">
+                        <input type="text" name="lastname" id="lastname" class="form-control input-sm" placeholder="Last Name" value="{{ $userDetails->lastname }}">
                             </div>
                         </div>
                       </div>
@@ -120,7 +123,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                              <input type="password" name="name_password" id="password" class="form-control input-sm" placeholder="Password" >
+                              <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" >
                           </div>
                        </div>
                     </div>
@@ -131,7 +134,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                              <input type="password" name="name_password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                              <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                             </div>
                           </div>
                         </div>
@@ -143,14 +146,14 @@
                   <div class="cols-sm-10">
                       <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-address-book" aria-hidden="true"></i></span>
-                          <input type="text" class="form-control input-sm" id="address" name="name_address" placeholder="Address" value="{{ $userDetails->address }}">
+                          <input type="text" class="form-control input-sm" id="address" name="address" placeholder="Address" value="{{ $userDetails->address }}">
                       </div>
                   </div>
                 </div>
 
                 <div class="form-group">
                     
-                    <select id="country" name="name_country" class="form-control" >
+                    <select id="country" name="country" class="form-control" >
                       <option value="" disabled selected>Select your Country</option>
                       <option value=""></option>
                       <option {{ $userDetails->country == "Afghanistan" ? 'selected' : '' }} value="Afghanistan">Afghanistan</option>
@@ -355,7 +358,7 @@
                         <div class="cols-sm-10">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mobile-phone" aria-hidden="true"></i></span>
-                              <input type="text" name="name_mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number" value="{{ $userDetails->mobile }}">
+                              <input type="text" name="mobile" id="mobile" class="form-control input-sm" placeholder="Mobile Number" value="{{ $userDetails->mobile }}">
                           </div>
                         </div>
                       </div>
@@ -366,7 +369,7 @@
                         <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
-                        <input type="text" name="name_course" id="course" class="form-control input-sm" placeholder="Course" value="{{ $userDetails->course }}" disabled="">
+                        <input type="text" name="course" id="course" class="form-control input-sm" placeholder="Course" value="{{ $userDetails->course }}" disabled="">
                             </div>
                         </div>   
                       </div>
@@ -377,7 +380,7 @@
                          <div class="cols-sm-10">
                             <div class="input-group">
                               <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                              <input type="text" name="name_batch" id="batch" class="form-control input-sm" placeholder="Batch" value="{{ $userDetails->batch }}" disabled="">
+                              <input type="text" name="batch" id="batch" class="form-control input-sm" placeholder="Batch" value="{{ $userDetails->batch }}" disabled="">
                             </div>
                         </div>
                       </div>
@@ -386,17 +389,16 @@
                 </div>
 
                 <div class="form-group">
-                   <div class="cols-sm-10">
-                        <div class="input-group">
-                              <span class="input-group-addon"><i class="fa fa-group" aria-hidden="true"></i></span>
-                              <input type="text" class="form-control input-sm" id="membership" name="name_membership" placeholder="Membership" value="{{ $userDetails->membership }}" disabled="">
-                        </div>
-                      </div>
+                  <div class="cols-sm-10">
+                    <div class="input-group">
+                          <span class="input-group-addon"><i class="fa fa-group" aria-hidden="true"></i></span>
+                          <input type="text" class="form-control input-sm" id="membership" name="membership" placeholder="Membership" value="{{ $userDetails->membership }}" disabled="">
                     </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button style="cursor:pointer" type="submit" class="btn btn-info btn-block">Submit</button>
             </div>
+          </form>
         </div>
     </div>
 </div>
