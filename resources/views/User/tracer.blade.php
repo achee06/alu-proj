@@ -12,16 +12,21 @@
     <div class="whole_container">
       <h1>Tracer</h1>
       <div class="form-group">
-      	<div class="col-md-4">
+      	<div class="col-md-6">
       		<label>Batch</label>
                      <div class="input-group">
 
                       <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                      <select id="country" name="name_country" class="form-control" >
+                      <select id="batch" name="batch" class="form-control" >
+                                <option value="" disabled selected></option>
+                                @foreach($batches as $key => $batch)
+                                  <option {{ old('batch') == $batch->batch ? 'selected' : '' }} value="{{ $batch->batch }}">{{ $batch->batch }}</option>
+                                @endforeach
+                      </select>
            			</select>
       				</div>
       	</div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <label>Course</label>
                      <div class="input-group">
 
@@ -29,21 +34,11 @@
                       <select id="course" name="course" class="form-control" >
                                 <option value="" disabled selected></option>
                                 @foreach($courses as $key => $course)
-                                  <option {{ old('course') == $course->name ? 'selected' : '' }} value="{{ $course->name }}">{{ $course->name }}</option>
+                                  <option {{ old('course') == $course->course ? 'selected' : '' }} value="{{ $course->course }}">{{ $course->course }}</option>
                                 @endforeach
                       </select>
             </div>
         </div>
-        <div class="col-md-4">
-          <label>Name</label>
-                     <div class="input-group">
-
-                      <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                      <select id="country" name="name_country" class="form-control" >
-                </select>
-            </div>
-        </div>
-      </div>
    
   		<div class="col-md-12 col-xs-12 col-sm-12" style="margin-top: 1rem;">
   			<table class="table table-hover table-content">

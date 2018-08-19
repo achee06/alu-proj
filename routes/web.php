@@ -25,6 +25,11 @@ Route::get('pages/gallery', function()
         return View::make('gallery');
     })->middleware('buildnavbar');
 
+Route::get('/email', function()
+    {
+        return View::make('emailTemplate');
+    });
+
 Route::get('user/dashboard', 'LoginController@userDashboard')->middleware('buildnavbar');
 
 Route::get('user/tracer', 'TracerController@show')->middleware('buildnavbar');

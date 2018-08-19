@@ -7,7 +7,7 @@
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="https://mobirise.com" class="navbar-logo"><img src="{{URL::asset('images/logo2018.png')}}" alt="Mobirise"></a>
+                        <a href="{{ url('/') }}" class="navbar-logo"><img src="{{URL::asset('images/logo2018.png')}}" alt="FUAAGI"></a>
                         
                     </div>
 
