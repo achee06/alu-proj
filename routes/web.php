@@ -27,16 +27,15 @@ Route::get('pages/gallery', function()
 
 Route::get('user/dashboard', 'LoginController@userDashboard')->middleware('buildnavbar');
 
-Route::get('user/tracer', function()
-    {
-        return View('User/tracer');
-    })->middleware('buildnavbar');
+Route::get('user/tracer', 'TracerController@show')->middleware('buildnavbar');
 
 Route::get('pages/index', function () {
     return redirect('/');
 })->middleware('buildnavbar');
 
 Route::get('pages/registration', 'RegisterController@create')->middleware('buildnavbar')->name('registrationIndex');
+
+
 
 Route::get('pages/login', 'LoginController@getLogin')->middleware('buildnavbar')->name('login');
 

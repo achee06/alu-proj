@@ -26,8 +26,12 @@
                      <div class="input-group">
 
                       <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                      <select id="country" name="name_country" class="form-control" >
-                </select>
+                      <select id="course" name="course" class="form-control" >
+                                <option value="" disabled selected></option>
+                                @foreach($courses as $key => $course)
+                                  <option {{ old('course') == $course->name ? 'selected' : '' }} value="{{ $course->name }}">{{ $course->name }}</option>
+                                @endforeach
+                      </select>
             </div>
         </div>
         <div class="col-md-4">
