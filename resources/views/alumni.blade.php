@@ -25,9 +25,15 @@
   <link rel="stylesheet" href="{{URL::asset('mediaquery.css')}}">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">   -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+
+ <!--  <link rel="stylesheet" type="text/css" href="{{URL::asset('BookBlock/css/default.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('BookBlock/css/bookblock.css')}}" />
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('BookBlock/css/demo1.css')}}" />
+  <script src="{{URL::asset('BookBlock/js/modernizr.custom.js')}}"></script> -->
+  @yield('Yearbook-css')
 </head>
 <body>
+
 
 <section id="page_content">
   @include('Layout/navbar')
@@ -82,6 +88,13 @@
   <script src="{{URL::asset('jquery-mb-ytplayer/jquery.mb.ytplayer.min.js')}}"></script>
   <script src="{{URL::asset('popper/popper.min.js')}}"></script>
   <script src="{{URL::asset('counter/jquery.counterup.min.js')}}"></script>
+  <script src="{{URL::asset('tracer/user_tracer.js')}}"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+  <!-- <script src="{{URL::asset('BookBlock/js/jquerypp.custom.js')}}"></script>
+  <script src="{{URL::asset('BookBlock/js/jquery.bookblock.js')}}"></script>
+  <script src="{{URL::asset('BookBlock/js/block.js')}}"></script> -->
   <input name="animation" type="hidden">
+  @yield('Yearbook-js')
+
   </body>
 </html>

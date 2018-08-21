@@ -29,6 +29,10 @@ Route::get('/email', function()
     {
         return View::make('emailTemplate');
     });
+Route::get('user/yearbook', function()
+    {
+        return View::make('User/yearbook');
+    })->middleware('buildnavbar');
 
 Route::get('user/dashboard', 'LoginController@userDashboard')->middleware('buildnavbar');
 

@@ -17,7 +17,7 @@
                      <div class="input-group">
 
                       <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                      <select id="batch" name="batch" class="form-control" >
+                      <select id="batch-tracer" name="batch" class="form-control" >
                                 <option value="" disabled selected></option>
                                 @foreach($batches as $key => $batch)
                                   <option {{ old('batch') == $batch->batch ? 'selected' : '' }} value="{{ $batch->batch }}">{{ $batch->batch }}</option>
@@ -31,7 +31,7 @@
                      <div class="input-group">
 
                       <span class="input-group-addon"><i class="fa fa-mortar-board" aria-hidden="true"></i></span>
-                      <select id="course" name="course" class="form-control" >
+                      <select id="course-tracer" name="course" class="form-control" >
                                 <option value="" disabled selected></option>
                                 @foreach($courses as $key => $course)
                                   <option {{ old('course') == $course->course ? 'selected' : '' }} value="{{ $course->course }}">{{ $course->course }}</option>
