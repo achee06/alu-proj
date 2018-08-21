@@ -15,6 +15,7 @@
       <div class="main clearfix">
         <div class="bb-custom-wrapper">
           <h3>Illustrations by <a href="http://dribbble.com/kevinhowdeshell">Kevin Howdeshell</a></h3>
+          <h3>Illustrations by <a href="http://dribbble.com/kevinhowdeshell">Kevin Howdeshell</a></h3>
           <div id="bb-bookblock" class="bb-bookblock">
             <div class="bb-item">
               <a href="http://drbl.in/bKVq"><img src="{{URL::asset('BookBlock/images/demo1/1.jpg')}}" alt="image01"/></a>
